@@ -1,0 +1,39 @@
+apply plugin: 'android'
+apply plugin: 'robolectric'
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.0.3"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    sourceSets {
+        instrumentTest.setRoot('src/test') // added for test
+    }
+}
+
+
+
+dependencies {
+    androidTestCompile('com.groupon.roboremote.roboremoteclient:junit:0.4') {  // added for test
+        exclude group: 'hamcrest-core'
+    }
+//    instrumentTestCompile('junit:junit:4.11') {
+//        exclude module: 'hamcrest-core'
+//    }
+    androidTestCompile 'org.robolectric:robolectric:2.+' // added for test
+//    instrumentTestCompile 'junit:junit:4.+' // added for test
+    compile 'com.android.support:appcompat-v7:19.+'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
