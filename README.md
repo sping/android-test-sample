@@ -1,4 +1,4 @@
-android-test-sample
+Description
 ===================
 
 Sample app with use of the test framework Robolectric and the Robolectric Android studio plugin combined.
