@@ -10,6 +10,6 @@ import static org.junit.Assert.*;
 public class RoboTest {
     @Test
     public void testTrueIsTrue() throws Exception {
-        assertEquals(true, true);
+        assertEquals(true, false);
     }
 }
